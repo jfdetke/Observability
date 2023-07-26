@@ -12,7 +12,9 @@ def create_diurnal_data():
     for hour in range(num_data_points):
         # Using a sine function to get higher values during working hours (9-5)
         value = 50 + 50 * math.sin((hour - 6) * (2 * math.pi) / 24)
-        diurnal_data.append(value)
+        # Round the value to two decimal places
+        rounded_value = round(value, 2)
+        diurnal_data.append(rounded_value)
 
     return diurnal_data
 
